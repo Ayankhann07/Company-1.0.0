@@ -1320,7 +1320,7 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
-.clients .clients-wrap {
+/* .clients .clients-wrap {
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
@@ -1350,7 +1350,51 @@ section,
 
 .clients .client-logo:hover img {
   transform: scale(1.1);
+} */
+ .clients {
+  overflow: hidden;
+  background-color: var(--surface-color);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  user-select: none;
+  animation: scrollRight 10s linear infinite;
+}
+
+/* 🔹 Logos ka group */
+.marquee__group {
+  display: flex;
+  gap: 90px;
+}
+
+.marquee__group img {
+  max-height: 100px; /* Logo size bada kar diya */
+  object-fit: contain;
+}
+
+/* 🔄 Right se start hoke left me jaana */
+@keyframes scrollRight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Skills Section
@@ -2706,12 +2750,10 @@ body {
 }
 
 .logo-img {
-  max-width: 100px; /* Adjust the width as needed */
+  max-width: 900px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  margin-right: 5px; /* Space between the logos */
+  margin-right: 1px; /* Space between the logos */
 }
-
-
 /* adding register page */
 
 .registercontainer {
