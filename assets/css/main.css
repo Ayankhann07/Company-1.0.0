@@ -960,51 +960,52 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .inner-title {
-  font-size: 2.75rem;
-  font-weight: 700;
-  margin: 30px ;
-}
- .col-lg-7 img{
+.about .row {
   display: flex;
-  margin-left: 190px;
-  margin-right: 230px;
-  margin-bottom: 500px;
-  margin-top: 150px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
 
-} 
-.col-lg-8 img{
-  display: flex;
-  margin-left: 240px;
-  margin-top: 900px;
-  margin-bottom: 500px;
-  border-radius: 40px;
- 
-}  .col-lg-9 img{
-  display: flex;
-  margin-right: 800px;
-  margin-left: 350px;
-  margin-bottom: 500px;
-  margin-top: 1700px;
-  
+.col-lg-6 {
+  flex: 1 1 50%;
+  padding: 15px;
 }
-@media (min-width: 991px) {
-  .about .inner-title {
-    max-width: 65%;
-    margin: 0 0 80px 0;
+
+.about .about-img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .about .row {
+      flex-direction: column; /* Stack content and image vertically */
+  }
+
+  .about .col-lg-6 {
+      flex: 1 1 100%; /* Full width for mobile */
+      text-align: center;
+  }
+
+  .about-img {
+      order: -1; /* Moves the image above the content in mobile view */
+  }
+
+  .about .about-img img {
+      max-width: 100%; /* Adjust image width for mobile */
+      margin: 20px 0;
   }
 }
 
-.about .our-story {
-  padding: 40px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  width: 100%;
-  margin-left: -12%;
-}
-
-@media (min-width: 991px) {
-  .about .our-story {
-    padding-right: 5%;
+@media (min-width: 992px) and (max-width: 1200px) {
+  .col-lg-6 {
+      flex: 1 1 48%; /* Adjust column width for medium screens */
   }
 }
 
@@ -2930,35 +2931,53 @@ img {
 } */
 
 
-
 .addons {
   text-align: center;
-  margin-left: 20px;
+  margin: 0 auto; /* ✅ Center align */
   background-color: white;
+  padding: 20px; /* ✅ Extra padding for better spacing */
+  max-width: 1200px;
 }
+
+/* Grid Responsive Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 15px;
   margin-top: 50px;
 }
+
+/* Individual Cards */
 .card {
   background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  width: 100%; /* ✅ Full width for better responsiveness */
+  max-width: 350px;
+  margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.card h3 {
-  margin: 0 0 10px;
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 columns on tablets */
+  }
 }
-.card p {
-  margin: 5px 0;
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* ✅ 1 column on mobile */
+    gap: 10px;
+  }
+
+  .addons {
+    padding: 15px; /* ✅ Adjust spacing for small screens */
+  }
+
+  .card {
+    width: 90%; /* ✅ Adjust card width */
+  }
 }
-.note {
-  margin-top: 20px;
-  font-size: 0.9em;
-  color: #bbb;
-} 
