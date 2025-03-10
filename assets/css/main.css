@@ -2742,61 +2742,29 @@ body {
 }
 
 /* logo */
-
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center the logos horizontally */
-  margin-left: 50px;
-}
-
-.logo-img {
-  max-width: 900px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Space between the logos */
-}
 .registercontainer {
   display: flex;
+  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
   width: 100%;
   max-width: 1200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
-  flex-wrap: wrap;
+  background-color: #f8f8f8;
+}
+
+.left-section, .right-section {
+  flex: 1 1 50%; /* Both sections take 50% width on larger screens */
+  padding: 50px;
+  box-sizing: border-box;
 }
 
 .left-section {
   background-color: #e0f7e9;
-  width: 50%;
-  padding: 50px;
-  box-sizing: border-box;
 }
 
 .left-section h1 {
   font-size: 36px;
   color: #000;
-}
-
-/* Mobile screens ke liye responsive design */
-@media (max-width: 768px) {
-  .registercontainer {
-    flex-direction: column;
-    width: 90%;
-  }
-
-  .left-section {
-    width: 100%;
-    padding: 30px;
-    text-align: center;
-  }
-
-  .left-section h1 {
-    font-size: 28px;
-  }
-
-  .right-section {
-    width: 100%;
-    padding: 30px;
-  }
 }
 
 .left-section h1 span {
@@ -2805,9 +2773,6 @@ body {
 
 .right-section {
   background-color: #fff;
-  width: 50%;
-  padding: 50px;
-  box-sizing: border-box;
 }
 
 .right-section h2 {
@@ -2831,14 +2796,13 @@ body {
   font-weight: bold;
 }
 
-.input-group input,
+.input-group input, 
 .input-group select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-left: 0; /* ✅ Fix: Remove unwanted left shift */
 }
 
 .register-btn {
@@ -2855,22 +2819,24 @@ body {
   background-color: #009900;
 }
 
-.input-group label a {
-  color: #00b300;
-  text-decoration: none;
-}
-
-.input-group label a:hover {
-  text-decoration: underline;
-}
-
-.checkbox-label {
+.logo-rowss {
   display: flex;
+  justify-content: center; /* Ensures logos are aligned in the center */
   align-items: center;
+  flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+  margin-top: 20px;
 }
 
-.checkbox-label input {
-  margin-right: 10px; /* ✅ Fix: Align checkbox properly */
+.logo {
+  max-width: 80px; /* Smaller logo size for better responsiveness */
+  height: auto;
+  margin: 10px; /* Space around logos */
+}
+
+.trust {
+  color: #00b300;
+  text-align: center; /* Centers "Trusted by" text */
+  font-weight: bold;
 }
 
 .custom-line {
@@ -2880,23 +2846,32 @@ body {
   margin: 20px auto;
 }
 
-.trust{
-  color: #00b300;
-  margin-left: 35%;
-  font-weight: bold;
- }
-.logo-rowss {
-  display: flex;
-  justify-content: space-around; 
-  align-items: center;
-  margin-top: 20px;
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+  .registercontainer {
+      flex-direction: column; /* Stacks sections vertically */
+      width: 100%; /* Full width on mobile */
+  }
+
+  .left-section, .right-section {
+      flex: 1 1 100%; /* Each section takes full width */
+      padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .left-section h1 {
+      font-size: 28px; /* Adjust font size */
+      text-align: center; /* Center-align text for mobile */
+  }
+
+  .right-section {
+      text-align: center;
+  }
+
+  .logo {
+      max-width: 60px; /* Smaller logo size for mobile */
+  }
 }
 
-.logo {
-  max-width: 100px; 
-  height: auto; 
-  margin: 0 10px; 
-}
 /*
 .logoslider {
   display: flex;
