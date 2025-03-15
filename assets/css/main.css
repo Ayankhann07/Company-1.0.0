@@ -3023,7 +3023,7 @@ img {
   opacity: 0; /* Start as invisible */
   transform: translateY(20px); /* Start with offset */
   animation: fade-slide-in 1.2s ease-in-out forwards; /* Fade and slide-in animation */
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .destip .second-hr {
