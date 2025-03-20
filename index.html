@@ -53,7 +53,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="team.html">Softwares</a></li>
+          <li class="dropdown"><a href="team.html"><span>Softwares</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="hotelmanagesoft.html">Restaurant Management Software</a></li>
+              <!-- <li><a href="customisebillingsoftware.html">Customise billing software</a></li> -->
+            </ul>
+          </li>
           <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="gstbillingsoftware.html">GST billing Softwares</a></li>
@@ -257,7 +262,7 @@
           </div>
         </div>
       </div>
-      <button class="query-button"> Software</button>
+      
     </section>
 
     
@@ -365,8 +370,23 @@
         </div>
 
       </div>
-      <button class="fixed-button">Try Demo</button>
+      <button class="fixed-button" id="scroll-button">Try Demo</button>
+      <script>
+        const button = document.getElementById('scroll-button');
 
+            // Show the button after scrolling down 200px
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 200) {
+                button.style.opacity = '1'; // Make the button visible
+                button.style.pointerEvents = 'auto'; // Enable interaction
+              } else {
+                button.style.opacity = '0'; // Hide the button
+                button.style.pointerEvents = 'none'; // Disable interaction
+              }
+            });
+
+      </script>
+</body>
     </section><!-- /Services Section -->
 
     <!-- Portfolio Section -->
