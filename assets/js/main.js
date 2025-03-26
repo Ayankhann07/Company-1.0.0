@@ -192,3 +192,25 @@
   window.addEventListener("load", initSwiper);
 
 })();
+
+// Get elements
+const requestCallbackBtn = document.getElementById('requestCallbackBtn');
+const popupForm = document.getElementById('popupForm');
+const closePopup = document.getElementById('closePopup');
+
+// Show the popup
+requestCallbackBtn.addEventListener('click', () => {
+  popupForm.style.display = 'flex'; // Show the popup
+});
+
+// Close the popup
+closePopup.addEventListener('click', () => {
+  popupForm.style.display = 'none'; // Hide the popup
+});
+
+// Close the popup if clicking outside the content area
+popupForm.addEventListener('click', (e) => {
+  if (e.target === popupForm) {
+    popupForm.style.display = 'none';
+  }
+});

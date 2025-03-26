@@ -154,8 +154,37 @@
 
       
     </section><!-- /Hero Section -->
-    <a href="https://wa.me/9111380047?text=Hello!%20I%20am%20interested%20in%20your%20services." target="_blank" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000;">
-      <img src="https://img.freepik.com/premium-vector/circle-whatsapp-logotype-icon-social-media-app-network-application-popular-editorial-brand-vector-illustration_913857-391.jpg?w=826" alt="Chat on WhatsApp" style="width: 50px; height: 50px;">
+    
+    <!-- Call Back Request Button -->
+    <button id="requestCallbackBtn">
+      <span class="icon">📞</span>
+      <span class="text">Request a Call Back</span>
+    </button>
+    
+
+  <!-- Popup Form -->
+  <div id="popupForm" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Request a Call Back</h2>
+      <form id="callbackForm" action="http://localhost:3000/callback" method="POST">
+
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName" placeholder="Enter your company name" required>
+        
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
+        
+        <label for="details">Additional Details:</label>
+        <textarea id="details" name="details" placeholder="Enter details (optional)"></textarea>
+        
+        <button type="submit">Send Request</button>
+      </form>
+      
+    </div>
+  </div>
+    <a href="https://wa.me/9111380047?text=Hello!%20I%20am%20interested%20in%20your%20services." target="_blank" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+      <img src="assets/img/whatsapp_3536445.png" alt="Chat on WhatsApp" style="width: 50px; height: 50px;">
   </a>
   
     <!-- About Section -->

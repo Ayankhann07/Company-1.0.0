@@ -2963,21 +2963,34 @@ img {
   bottom: 20px; /* Keeps the button 20px above the bottom */
   background-color: #770808; /* Button background color */
   color: white; /* Text color */
-  padding: 10px 20px; /* Padding for the button */
+  padding: 10px 20px; /* Default padding */
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
-  font-size: 16px; /* Button font size */
+  font-size: 16px; /* Default font size */
   cursor: pointer; /* Cursor changes to pointer on hover */
   transition: opacity 0.3s ease; /* Smooth hover effect */
-  width: 200px;
+  width: 200px; /* Default width for laptop screens */
   z-index: 9999;
-  opacity: 0; /* Start hidden */
-  pointer-events: none; /* Prevent interaction when hidden */
+  opacity: 1; /* Default visible */
+  pointer-events: auto; /* Enable interaction */
 }
+
+/* Hover effect */
 .fixed-button:hover {
-  background-color: #1e4e9d; /* Darker shade on hover */
+  color: #000;
+  background-color: #b7a9a9; /* Darker red on hover */
 }
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+  .fixed-button {
+    width: 120px; /* Smaller width for mobile */
+    padding: 8px 12px; /* Reduced padding for compact size */
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
 
 
 .toggle-switch {
@@ -3387,4 +3400,220 @@ img {
   .card {
     flex: 1 1 100%; /* Each card takes full width on mobile */
   }
+}
+
+
+
+/* adding a new class for the FAQs */
+
+/* Base Styles */
+.faq {
+  max-width: 100%;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.faq-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 80px;
+}
+
+.leftfaq, .rightfaq {
+  flex: 1;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.leftfaq h1, .rightfaq h1 {
+  font-size: 18px;
+  color: #000;
+  margin: 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.leftfaq p, .rightfaq p {
+  color: #000;
+  margin-top: 20px;
+}
+
+/* Fade-in Animation for Sections */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effect for Titles */
+.leftfaq h1:hover, .rightfaq h1:hover {
+  color: #0073e6;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  .faq-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .leftfaq, .rightfaq {
+    flex: unset;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .faq h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq h2 {
+    font-size: 18px;
+  }
+
+  .leftfaq h1, .rightfaq h1 {
+    font-size: 16px;
+  }
+
+  .leftfaq p, .rightfaq p {
+    font-size: 14px;
+  }
+}
+
+/* Button Styling */
+#requestCallbackBtn {
+  position: fixed;
+  bottom: 70px;
+  right: 15px;
+  background-color: #770808;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#requestCallbackBtn .icon {
+  font-size: 20px; /* Icon size */
+}
+
+#requestCallbackBtn .text {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* Hover effect */
+#requestCallbackBtn:hover {
+  background-color: #550606; /* Darker red */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  #requestCallbackBtn {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  #requestCallbackBtn .text {
+    display: none; /* Hide text on smaller screens */
+  }
+
+  #requestCallbackBtn .icon {
+    font-size: 24px; /* Increase icon size for better visibility */
+  }
+}
+
+
+/* Popup Styling */
+/* Popup container */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Popup content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ensures close button is positioned relative to the content */
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Form elements */
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  background-color: #770808; /* Button background */
+  color: white; /* Button text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #550606; /* Darker shade on hover */
 }
